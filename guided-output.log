@@ -1,0 +1,526 @@
+Running baseline mutation test
+[32m19:37:36 (28900) INFO ProjectReader[39m Found 1 of 7 file(s) to be mutated.
+[32m19:37:36 (28900) INFO Instrumenter[39m Instrumented 1 source file(s) with 26 mutant(s)
+[32m19:37:36 (28900) INFO ConcurrencyTokenProvider[39m Creating 19 test runner process(es).
+[32m19:37:37 (28900) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m19:37:38 (28900) INFO DryRunExecutor[39m Initial test run succeeded. Ran 6 tests in 0 seconds (net 6 ms, overhead 413 ms).
+
+All tests/math.test.js
+  ✓ add adds two numbers [line 4] (killed 3)
+  ✓ divide divides numbers [line 10] (killed 2)
+  ✓ divide throws on zero [line 14] (killed 3)
+  ✓ isAdult returns true for adults [line 20] (killed 3)
+  ✓ clamp clamps values below min [line 26] (killed 4)
+  ✓ clamp clamps values above max [line 30] (killed 4)
+
+[Survived] ArithmeticOperator
+src/math.js:9:10
+-     return a / b;
+
++     return a * b;
+
+Tests ran:
+    divide divides numbers
+
+
+[Survived] ConditionalExpression
+src/math.js:13:10
+-     return age >= 18;
+
++     return true;
+
+Tests ran:
+    isAdult returns true for adults
+
+
+[Survived] EqualityOperator
+src/math.js:13:10
+-     return age >= 18;
+
++     return age > 18;
+
+Tests ran:
+    isAdult returns true for adults
+
+
+[Survived] EqualityOperator
+src/math.js:17:7
+-     if (value < min) {
+
++     if (value <= min) {
+
+Tests ran:
+    clamp clamps values below min
+    clamp clamps values above max
+
+
+[Survived] StringLiteral
+src/math.js:7:21
+-       throw new Error('Cannot divide by zero');
+
++       throw new Error("");
+
+Tests ran:
+    divide throws on zero
+
+
+[Survived] ConditionalExpression
+src/math.js:20:7
+-     if (value > max) {
+
++     if (true) {
+
+Tests ran:
+    clamp clamps values above max
+
+
+[Survived] EqualityOperator
+src/math.js:20:7
+-     if (value > max) {
+
++     if (value >= max) {
+
+Tests ran:
+    clamp clamps values above max
+
+
+Ran 1.54 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  73.08 |   73.08 |       19 |         0 |          7 |        0 |        0 |
+ math.js  |  73.08 |   73.08 |       19 |         0 |          7 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m19:37:39 (28900) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/vikas/my_projects/mutation-test-cases/examples/demo-app/reports/mutation/mutation.json
+[32m19:37:39 (28900) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/vikas/my_projects/mutation-test-cases/examples/demo-app/reports/mutation/mutation.html
+[32m19:37:39 (28900) INFO MutationTestExecutor[39m Done in 2 seconds.
+FAIL tests/generated-guided/mutant-8-0.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-8-0.test.js'
+
+    > 1 | const { divide } = require('../src/math');
+        |                    ^
+      2 |
+      3 | describe('divide', () => {
+      4 |   test('returns correct quotient', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-8-0.test.js:1:20)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.76 s, estimated 4 s
+Rejected mutant 8, attempt 1
+FAIL tests/generated-guided/mutant-8-0.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-8-0.test.js'
+
+    > 1 | const { divide } = require('../src/math');
+        |                    ^
+      2 |
+      3 | describe('divide', () => {
+      4 |   test('returns correct quotient for division', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-8-0.test.js:1:20)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.295 s, estimated 1 s
+Rejected mutant 8, attempt 2
+FAIL tests/generated-guided/mutant-8-0.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-8-0.test.js'
+
+    > 1 | const { divide } = require('../src/math');
+        |                    ^
+      2 |
+      3 | describe('divide', () => {
+      4 |   test('returns correct quotient for division', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-8-0.test.js:1:20)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.338 s, estimated 1 s
+Rejected mutant 8, attempt 3
+FAIL tests/generated-guided/mutant-10-1.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-10-1.test.js'
+
+    > 1 | const { isAdult } = require('../src/math');
+        |                     ^
+      2 |
+      3 | describe('isAdult', () => {
+      4 |   test('returns false for minors', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-10-1.test.js:1:21)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.466 s, estimated 1 s
+Rejected mutant 10, attempt 1
+FAIL tests/generated-guided/mutant-10-1.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-10-1.test.js'
+
+    > 1 | const { isAdult } = require('../src/math');
+        |                     ^
+      2 |
+      3 | describe('isAdult', () => {
+      4 |   test('returns false for minors', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-10-1.test.js:1:21)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.353 s, estimated 1 s
+Rejected mutant 10, attempt 2
+FAIL tests/generated-guided/mutant-10-1.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-10-1.test.js'
+
+    > 1 | const { isAdult } = require('../src/math');
+        |                     ^
+      2 |
+      3 | describe('isAdult', () => {
+      4 |   test('returns false for minors', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-10-1.test.js:1:21)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.385 s, estimated 1 s
+Rejected mutant 10, attempt 3
+FAIL tests/generated-guided/mutant-12-2.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-12-2.test.js'
+
+    > 1 | const { isAdult } = require('../src/math');
+        |                     ^
+      2 |
+      3 | describe('isAdult', () => {
+      4 |   test('returns true for age 18 (boundary case)', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-12-2.test.js:1:21)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.339 s, estimated 1 s
+Rejected mutant 12, attempt 1
+FAIL tests/generated-guided/mutant-12-2.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-12-2.test.js'
+
+    > 1 | const { isAdult } = require('../src/math');
+        |                     ^
+      2 |
+      3 | describe('isAdult', () => {
+      4 |   test('returns true for age 18 (boundary)', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-12-2.test.js:1:21)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.439 s, estimated 1 s
+Rejected mutant 12, attempt 2
+FAIL tests/generated-guided/mutant-12-2.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-12-2.test.js'
+
+    > 1 | const { isAdult } = require('../src/math');
+        |                     ^
+      2 |
+      3 | describe('isAdult boundary', () => {
+      4 |   test('returns true for age 18', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-12-2.test.js:1:21)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.282 s, estimated 1 s
+Rejected mutant 12, attempt 3
+FAIL tests/generated-guided/mutant-17-3.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-17-3.test.js'
+
+    > 1 | const { clamp } = require('../src/math');
+        |                   ^
+      2 |
+      3 | describe('clamp mutation test', () => {
+      4 |   test('returns max when value equals min but min > max', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-17-3.test.js:1:19)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.346 s, estimated 1 s
+Rejected mutant 17, attempt 1
+Mutant 17, attempt 2 failed: Cannot read properties of undefined (reading '0')
+Mutant 17, attempt 3 failed: Generated output contains no Jest test call
+FAIL tests/generated-guided/mutant-7-4.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-7-4.test.js'
+
+    > 1 | const { divide } = require('../src/math');
+        |                    ^
+      2 |
+      3 | describe('divide', () => {
+      4 |   test('throws with specific message on zero', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-7-4.test.js:1:20)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.384 s, estimated 1 s
+Rejected mutant 7, attempt 1
+FAIL tests/generated-guided/mutant-7-4.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-7-4.test.js'
+
+    > 1 | const { divide } = require('../src/math');
+        |                    ^
+      2 |
+      3 | describe('divide', () => {
+      4 |   test('throws with specific message on zero', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-7-4.test.js:1:20)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.394 s, estimated 1 s
+Rejected mutant 7, attempt 2
+FAIL tests/generated-guided/mutant-7-4.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-7-4.test.js'
+
+    > 1 | const { divide } = require('../src/math');
+        |                    ^
+      2 |
+      3 | describe('divide error message', () => {
+      4 |   test('throws with specific message when dividing by zero', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-7-4.test.js:1:20)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.319 s, estimated 1 s
+Rejected mutant 7, attempt 3
+FAIL tests/generated-guided/mutant-20-5.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-20-5.test.js'
+
+    > 1 | const { clamp } = require('../src/math');
+        |                   ^
+      2 |
+      3 | describe('clamp', () => {
+      4 |   test('returns value when within min and max bounds', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-20-5.test.js:1:19)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.381 s, estimated 1 s
+Rejected mutant 20, attempt 1
+FAIL tests/generated-guided/mutant-20-5.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-20-5.test.js'
+
+    > 1 | const { clamp } = require('../src/math');
+        |                   ^
+      2 |
+      3 | describe('clamp', () => {
+      4 |   test('returns value when within min and max bounds', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-20-5.test.js:1:19)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.391 s, estimated 1 s
+Rejected mutant 20, attempt 2
+FAIL tests/generated-guided/mutant-20-5.test.js
+  ● Test suite failed to run
+
+    Cannot find module '../src/math' from 'tests/generated-guided/mutant-20-5.test.js'
+
+    > 1 | const { clamp } = require('../src/math');
+        |                   ^
+      2 |
+      3 | describe('clamp', () => {
+      4 |   test('returns value when within min and max bounds', () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/index.js:895:11)
+      at Object.require (tests/generated-guided/mutant-20-5.test.js:1:19)
+
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.246 s, estimated 1 s
+Rejected mutant 20, attempt 3
+Mutant 22, attempt 1 failed: Generated output contains no Jest test call
+Mutant 22, attempt 2 failed: Generated output contains no Jest test call
+Mutant 22, attempt 3 failed: Cannot read properties of undefined (reading '0')
+[32m19:46:18 (25300) INFO ProjectReader[39m Found 1 of 7 file(s) to be mutated.
+[32m19:46:18 (25300) INFO Instrumenter[39m Instrumented 1 source file(s) with 26 mutant(s)
+[32m19:46:18 (25300) INFO ConcurrencyTokenProvider[39m Creating 19 test runner process(es).
+[32m19:46:19 (25300) INFO DryRunExecutor[39m Starting initial test run (jest test runner with "perTest" coverage analysis). This may take a while.
+[32m19:46:19 (25300) INFO DryRunExecutor[39m Initial test run succeeded. Ran 6 tests in 0 seconds (net 6 ms, overhead 409 ms).
+
+All tests/math.test.js
+  ✓ add adds two numbers [line 4] (killed 3)
+  ✓ divide divides numbers [line 10] (killed 2)
+  ✓ divide throws on zero [line 14] (killed 3)
+  ✓ isAdult returns true for adults [line 20] (killed 3)
+  ✓ clamp clamps values below min [line 26] (killed 4)
+  ✓ clamp clamps values above max [line 30] (killed 4)
+
+[Survived] ArithmeticOperator
+src/math.js:9:10
+-     return a / b;
+
++     return a * b;
+
+Tests ran:
+    divide divides numbers
+
+
+[Survived] ConditionalExpression
+src/math.js:13:10
+-     return age >= 18;
+
++     return true;
+
+Tests ran:
+    isAdult returns true for adults
+
+
+[Survived] EqualityOperator
+src/math.js:13:10
+-     return age >= 18;
+
++     return age > 18;
+
+Tests ran:
+    isAdult returns true for adults
+
+
+[Survived] EqualityOperator
+src/math.js:17:7
+-     if (value < min) {
+
++     if (value <= min) {
+
+Tests ran:
+    clamp clamps values below min
+    clamp clamps values above max
+
+
+[Survived] StringLiteral
+src/math.js:7:21
+-       throw new Error('Cannot divide by zero');
+
++       throw new Error("");
+
+Tests ran:
+    divide throws on zero
+
+
+[Survived] ConditionalExpression
+src/math.js:20:7
+-     if (value > max) {
+
++     if (true) {
+
+Tests ran:
+    clamp clamps values above max
+
+
+[Survived] EqualityOperator
+src/math.js:20:7
+-     if (value > max) {
+
++     if (value >= max) {
+
+Tests ran:
+    clamp clamps values above max
+
+
+Ran 1.54 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  73.08 |   73.08 |       19 |         0 |          7 |        0 |        0 |
+ math.js  |  73.08 |   73.08 |       19 |         0 |          7 |        0 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m19:46:20 (25300) INFO JsonReporter[39m Your report can be found at: file:///C:/Users/vikas/my_projects/mutation-test-cases/examples/demo-app/reports/mutation/mutation.json
+[32m19:46:20 (25300) INFO HtmlReporter[39m Your report can be found at: file:///C:/Users/vikas/my_projects/mutation-test-cases/examples/demo-app/reports/mutation/mutation.html
+[32m19:46:20 (25300) INFO MutationTestExecutor[39m Done in 2 seconds.
+
+----------------------------------------
+Baseline mutation score:       73.08%
+Mutation-guided score:         73.08%
+Improvement:                   0.00 percentage points
+Accepted tests:                0/7
+Accepted tests are in:         C:\Users\vikas\my_projects\mutation-test-cases\examples\demo-app\tests\generated-guided
+----------------------------------------

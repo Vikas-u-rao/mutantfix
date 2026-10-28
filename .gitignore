@@ -3,3 +3,5 @@ node_modules/
 reports/
 .stryker-tmp/
 project-implementation-guide.md
+.env
+.env.*
